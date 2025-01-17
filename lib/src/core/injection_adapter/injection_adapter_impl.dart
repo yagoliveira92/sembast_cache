@@ -1,8 +1,8 @@
 import 'package:sembast_cache/src/core/injection_adapter/injection_adapter.dart';
 import 'package:get_it/get_it.dart';
 
-class InjectionAdapter implements InjectionService {
-  const InjectionAdapter(this._getIt);
+class InjectionAdapterImpl implements InjectionAdapter {
+  const InjectionAdapterImpl(this._getIt);
 
   final GetIt _getIt;
 
