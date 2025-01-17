@@ -26,6 +26,14 @@ class MyApp extends StatelessWidget {
             color: Colors.white,
           ),
         ),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          iconTheme: IconThemeData(
+            color: Colors.white,
+            size: 28,
+          ),
+        ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
             padding: WidgetStateProperty.all(

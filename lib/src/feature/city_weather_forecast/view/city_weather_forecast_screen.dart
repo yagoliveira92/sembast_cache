@@ -16,7 +16,12 @@ class CityWeatherForecastScreen extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: Text(cityName),
+        title: Text(
+          cityName,
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                fontSize: 24,
+              ),
+        ),
       ),
       body: Ink(
         padding: const EdgeInsets.fromLTRB(32, 128, 32, 0),

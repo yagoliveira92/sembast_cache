@@ -47,7 +47,7 @@ class DetailsWeatherCardWidget extends StatelessWidget {
                   color: Color(0xFFFFFFFF),
                   borderRadius: BorderRadius.all(Radius.circular(8)),
                   image: DecorationImage(
-                      image: AssetImage("assets/img/water_drop.png"),
+                      image: AssetImage("assets/icones/water_drop.png"),
                       alignment: Alignment.center),
                 ),
               ),
@@ -76,7 +76,7 @@ class DetailsWeatherCardWidget extends StatelessWidget {
                   color: Color(0xFFFFFFFF),
                   borderRadius: BorderRadius.all(Radius.circular(8)),
                   image: DecorationImage(
-                      image: AssetImage("assets/img/device_thermostat.png"),
+                      image: AssetImage("assets/icones/device_thermostat.png"),
                       alignment: Alignment.center),
                 ),
               ),
