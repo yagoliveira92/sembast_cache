@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sembast_cache/src/weather_forecast/view/weather_forecast_screen.dart';
+import 'package:sembast_cache/src/feature/weather_forecast/view/weather_forecast_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});

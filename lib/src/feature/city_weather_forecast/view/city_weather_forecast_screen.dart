@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sembast_cache/src/city_weather_forecast/widgets/details_weather_card_widget.dart';
-import 'package:sembast_cache/src/city_weather_forecast/widgets/vertical_weather_card_widget.dart';
+import 'package:sembast_cache/src/feature/city_weather_forecast/widgets/details_weather_card_widget.dart';
+import 'package:sembast_cache/src/feature/city_weather_forecast/widgets/vertical_weather_card_widget.dart';
 
 class CityWeatherForecastScreen extends StatelessWidget {
   const CityWeatherForecastScreen({

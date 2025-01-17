@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sembast_cache/src/city_weather_forecast/view/city_weather_forecast_screen.dart';
-import 'package:sembast_cache/src/weather_forecast/widgets/custom_search_field_widget.dart';
-import 'package:sembast_cache/src/weather_forecast/widgets/weather_card_widget.dart';
+import 'package:sembast_cache/src/feature/city_weather_forecast/view/city_weather_forecast_screen.dart';
+import 'package:sembast_cache/src/feature/weather_forecast/widgets/custom_search_field_widget.dart';
+import 'package:sembast_cache/src/feature/weather_forecast/widgets/weather_card_widget.dart';
 
 class WeatherForecastScreen extends StatefulWidget {
   const WeatherForecastScreen({super.key});
