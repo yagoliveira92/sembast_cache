@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sembast_cache/src/core/enviroments/enviroments_enum.dart';
 
 class WeatherCardWidget extends StatelessWidget {
   const WeatherCardWidget({
@@ -6,10 +8,12 @@ class WeatherCardWidget extends StatelessWidget {
     required this.cityName,
     required this.temperature,
     required this.onTap,
+    required this.conditionSlug,
   });
 
   final String cityName;
   final String temperature;
+  final String conditionSlug;
   final Function onTap;
 
   @override
@@ -32,7 +36,10 @@ class WeatherCardWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              const Icon(Icons.sunny),
+              SvgPicture.network(
+                "${EnvironmentEnum.constants.imageUrl}$conditionSlug.svg",
+                width: 32,
+              ),
               Text(cityName),
               Text(
                 temperature,

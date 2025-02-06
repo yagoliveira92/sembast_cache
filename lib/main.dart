@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sembast_cache/src/feature/home_screen/view/welcome_screen.dart';
+import 'package:sembast_cache/src/core/containers/injection_container.dart'
+    as injection;
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  injection.init();
   runApp(const MyApp());
 }
 

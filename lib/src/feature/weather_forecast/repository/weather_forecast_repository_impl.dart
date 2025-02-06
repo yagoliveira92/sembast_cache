@@ -23,11 +23,11 @@ class WeatherRepositoryImpl implements WeatherRepository {
           final data = await _weatherApiService.fetchData(city);
           weatherData.add(data);
         } catch (e) {
-          print(e);
+          throw Exception('Não tem dados');
         }
       });
     } else {
-      throw Exception('No internet connection');
+      throw Exception('Sem conexão com a internet');
     }
     return weatherData;
   }

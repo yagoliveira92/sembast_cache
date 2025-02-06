@@ -4,13 +4,18 @@ class CustomSearchFieldWidget extends StatelessWidget {
   const CustomSearchFieldWidget({
     super.key,
     required this.controller,
+    required this.onChanged,
   });
 
   final TextEditingController controller;
+  final Function(String) onChanged;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged: (value) {
+        onChanged(value);
+      },
       controller: controller,
       style: const TextStyle(
         color: Colors.white, // Change this to your desired color

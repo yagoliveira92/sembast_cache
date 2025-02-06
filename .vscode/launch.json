@@ -8,30 +8,18 @@
         {
             "name": "sembast_cache",
             "request": "launch",
-            "type": "dart",
-            "toolArgs": [
-                "--dart-define",
-                "HG_KEY=MINHA_CHAVE"
-            ]
+            "type": "dart"
         },
         {
             "name": "sembast_cache (profile mode)",
             "request": "launch",
             "type": "dart",
-            "toolArgs": [
-                "--dart-define",
-                "HG_KEY=MINHA_CHAVE"
-            ],
             "flutterMode": "profile"
         },
         {
             "name": "sembast_cache (release mode)",
             "request": "launch",
             "type": "dart",
-            "toolArgs": [
-                "--dart-define",
-                "HG_KEY=MINHA_CHAVE"
-            ],
             "flutterMode": "release"
         }
     ]

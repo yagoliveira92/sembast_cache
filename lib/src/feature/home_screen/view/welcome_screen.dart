@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sembast_cache/src/core/containers/injection_container.dart';
+import 'package:sembast_cache/src/feature/weather_forecast/cubit/weather_forecast_cubit.dart';
+import 'package:sembast_cache/src/feature/weather_forecast/repository/weather_forecast_repository.dart';
 import 'package:sembast_cache/src/feature/weather_forecast/view/weather_forecast_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -68,7 +72,13 @@ class WelcomeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => WeatherForecastScreen(),
+                      builder: (context) => BlocProvider(
+                        create: (context) => WeatherForecastCubit(
+                          weatherRepository:
+                              dependency.get<WeatherRepository>(),
+                        )..getWeatherData(),
+                        child: WeatherForecastScreen(),
+                      ),
                     ),
                   );
                 },
