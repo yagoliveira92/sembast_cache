@@ -41,16 +41,19 @@ class CityWeatherForecastScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 VerticalWeatherCardWidget(
+                  imageUrl: "assets/images/sun.png",
                   weekDay: "Segunda",
                   temperature: "25°",
                   date: "03/12",
                 ),
                 VerticalWeatherCardWidget(
+                  imageUrl: "assets/images/sun.png",
                   weekDay: "Segunda",
                   temperature: "25°",
                   date: "03/12",
                 ),
                 VerticalWeatherCardWidget(
+                  imageUrl: "assets/images/sun.png",
                   weekDay: "Segunda",
                   temperature: "25°",
                   date: "03/12",

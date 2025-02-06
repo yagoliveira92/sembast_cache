@@ -6,11 +6,14 @@ class VerticalWeatherCardWidget extends StatelessWidget {
     required this.weekDay,
     required this.temperature,
     required this.date,
+    required this.imageUrl,
+
   });
 
   final String weekDay;
   final String date;
   final String temperature;
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {

@@ -1,46 +1,21 @@
 enum EnvironmentEnum {
-  production(
-    type: 'production',
-    apiBaseUrl: 'https://api.openweathermap.org/data/2.5/',
+  constants(
+    apiBaseUrl: 'https://api.hgbrasil.com/weather',
     apiKey: String.fromEnvironment('WEATHER_API_KEY'),
-  ),
-  development(
-    type: 'development',
-    apiBaseUrl: 'https://api.openweathermap.org/data/2.5/',
-    apiKey: String.fromEnvironment('WEATHER_API_KEY'),
+    imageUrl: 'https://assets.hgbrasil.com/weather/icons/conditions/',
+    moonPhaseUrl:  'https://assets.hgbrasil.com/weather/icons/moon/',
   );
 
   const EnvironmentEnum({
-    required this.type,
     required this.apiBaseUrl,
     required this.apiKey,
+    required this.imageUrl,
+    required this.moonPhaseUrl,
+
   });
 
-  final String type;
   final String apiBaseUrl;
   final String apiKey;
-
-  EnvironmentEnum envFromString(String value) {
-    switch (value) {
-      case "PROD":
-        return EnvironmentEnum.production;
-      case "DEV":
-        return EnvironmentEnum.development;
-      default:
-        throw ArgumentError("Invalid status string: $value");
-    }
-  }
-}
-
-extension EnvironmentsEnumMethods on EnvironmentEnum {
-  static EnvironmentEnum envFromString(String value) {
-    switch (value) {
-      case "PROD":
-        return EnvironmentEnum.production;
-      case "DEV":
-        return EnvironmentEnum.development;
-      default:
-        throw ArgumentError("Invalid status string: $value");
-    }
-  }
+  final String imageUrl;
+  final String moonPhaseUrl;
 }
