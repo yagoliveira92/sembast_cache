@@ -78,7 +78,7 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
                                 MaterialPageRoute(
                                   builder: (context) =>
                                       CityWeatherForecastScreen(
-                                    cityName: state.weatherData[index].cityName,
+                                    weatherModel: state.weatherData[index],
                                   ),
                                 ),
                               );

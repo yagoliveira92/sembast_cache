@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sembast_cache/src/core/enviroments/enviroments_enum.dart';
+import 'package:sembast_cache/src/core/models/weather_model.dart';
 
 class DetailsWeatherCardWidget extends StatelessWidget {
-  const DetailsWeatherCardWidget({super.key});
+  const DetailsWeatherCardWidget({required this.weatherModel, super.key});
 
+  final WeatherModel weatherModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,8 +17,8 @@ class DetailsWeatherCardWidget extends StatelessWidget {
       ),
       child: Column(
         children: <Widget>[
-          const Text(
-            "Hoje (03/12)",
+          Text(
+            "Hoje ${weatherModel.date}",
             style: TextStyle(
               fontWeight: FontWeight.w600,
             ),
@@ -22,18 +26,16 @@ class DetailsWeatherCardWidget extends StatelessWidget {
           const SizedBox(
             height: 24,
           ),
-          const Icon(
-            Icons.sunny,
-            size: 64,
-          ),
+          SvgPicture.network(
+              "${EnvironmentEnum.constants.imageUrl}${weatherModel.conditionSlug}.svg"),
           Text(
-            "32°",
+            "${weatherModel.temp}°",
             style: TextStyle(
               fontSize: 42,
               fontWeight: FontWeight.w700,
             ),
           ),
-          const Text("Sol entre nuvens"),
+          Text(weatherModel.description),
           const SizedBox(
             height: 24,
           ),
@@ -55,9 +57,9 @@ class DetailsWeatherCardWidget extends StatelessWidget {
                 "Umidade:",
                 style: TextStyle(fontWeight: FontWeight.w600),
               ),
-              const Expanded(
+              Expanded(
                 child: Text(
-                  "80%",
+                  "${weatherModel.humidity}%",
                   textAlign: TextAlign.right,
                 ),
               ),
@@ -84,8 +86,10 @@ class DetailsWeatherCardWidget extends StatelessWidget {
                 "Min/Max:",
                 style: TextStyle(fontWeight: FontWeight.w600),
               ),
-              const Expanded(
-                child: Text("20/34°", textAlign: TextAlign.right),
+              Expanded(
+                child: Text(
+                    "${weatherModel.forecast[0].min}/${weatherModel.forecast[0].max}°",
+                    textAlign: TextAlign.right),
               ),
             ],
           ),
