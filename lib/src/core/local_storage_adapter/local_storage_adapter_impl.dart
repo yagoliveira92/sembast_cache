@@ -24,4 +24,16 @@ class LocalStorageAdapterImpl implements LocalStorageAdapter {
       return snapshot.single.value;
     });
   }
+
+  @override
+  Future<void> eraseAndAdd({
+    required String store,
+    required Map<String, dynamic> data,
+  }) async {
+    final storeInstance = stringMapStoreFactory.store(store);
+    await _database.transaction((transaction) {
+      storeInstance.drop(transaction);
+      return storeInstance.add(transaction, Map<String, dynamic>.from(data));
+    });
+  }
 }
