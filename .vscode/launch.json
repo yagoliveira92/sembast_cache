@@ -8,7 +8,9 @@
         {
             "name": "sembast_cache",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "toolArgs": ["--dart-define",
+        "HG_KEY=376b8597",]
         },
         {
             "name": "sembast_cache (profile mode)",
