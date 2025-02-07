@@ -1,7 +1,6 @@
 enum EnvironmentEnum {
   constants(
     apiBaseUrl: 'https://api.hgbrasil.com/weather',
-    //apiKey: String.fromEnvironment('WEATHER_API_KEY'),
     apiKey: 'e62cb5cd',
     imageUrl: 'https://assets.hgbrasil.com/weather/icons/conditions/',
     moonPhaseUrl: 'https://assets.hgbrasil.com/weather/icons/moon/',
