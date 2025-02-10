@@ -35,6 +35,7 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF00457D),
       body: Ink(
         height: double.infinity,
         padding: const EdgeInsets.fromLTRB(32, 80, 32, 0),
