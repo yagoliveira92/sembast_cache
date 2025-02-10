@@ -16,7 +16,8 @@ class WeatherForecastCubit extends Cubit<WeatherForecastState> {
   Future<void> getWeatherData() async {
     emit(WeatherForecastLoading());
     try {
-      weatherData = await _weatherRepository.getWeatherData();
+      final weatherDataRecord = await _weatherRepository.getWeatherData();
+      weatherData = weatherDataRecord.weatherList;
       emit(WeatherForecastSuccess(weatherData));
     } catch (e) {
       emit(WeatherForecastError(e.toString()));

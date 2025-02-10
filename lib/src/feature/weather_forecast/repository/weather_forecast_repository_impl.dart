@@ -16,7 +16,11 @@ class WeatherRepositoryImpl implements WeatherRepository {
   );
 
   @override
-  Future<List<WeatherModel>> getWeatherData() async {
+  Future<
+      ({
+        bool hasConnectivity,
+        List<WeatherModel> weatherList,
+      })> getWeatherData() async {
     List<String> cities = ['Sorriso', 'Barreiras', 'Rio Verde', 'Maracaju'];
     List<WeatherModel> weatherData = [];
     final hasConnection = await _connectivityService.hasInternetConnection();
@@ -39,6 +43,6 @@ class WeatherRepositoryImpl implements WeatherRepository {
         throw Exception('Não tem dados');
       }
     });
-    return weatherData;
+    return (hasConnectivity: hasConnection, weatherList: weatherData);
   }
 }
