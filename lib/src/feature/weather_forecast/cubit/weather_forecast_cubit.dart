@@ -14,16 +14,19 @@ class WeatherForecastCubit extends Cubit<WeatherForecastState> {
   final WeatherRepository _weatherRepository;
   List<WeatherModel> weatherData = [];
   bool hasConnectivity = false;
+
   Future<void> getWeatherData() async {
     emit(WeatherForecastLoading());
     try {
       final weatherDataRecord = await _weatherRepository.getWeatherData();
+      hasConnectivity = weatherDataRecord.hasConnectivity;
       weatherData = weatherDataRecord.weatherList;
       hasConnectivity = weatherDataRecord.hasConnectivity;
       emit(WeatherForecastSuccess(
         weatherData,
         hasConnectivity,
       ));
+      emit(WeatherForecastSuccess(weatherData, hasConnectivity));
     } catch (e) {
       emit(WeatherForecastError(e.toString()));
     }
@@ -40,12 +43,17 @@ class WeatherForecastCubit extends Cubit<WeatherForecastState> {
           filteredWeatherData,
           hasConnectivity,
         ));
+        emit(WeatherForecastSuccess(
+          filteredWeatherData,
+          hasConnectivity,
+        ));
       } else {
         if (state is WeatherForecastSuccess) {
           emit(WeatherForecastSuccess(
             weatherData,
             hasConnectivity,
           ));
+          emit(WeatherForecastSuccess(weatherData, hasConnectivity));
         }
       }
     }

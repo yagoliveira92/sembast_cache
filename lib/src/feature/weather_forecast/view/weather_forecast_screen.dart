@@ -49,7 +49,39 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
           ),
         ),
         child: BlocConsumer<WeatherForecastCubit, WeatherForecastState>(
-          listener: (context, state) {},
+          listener: (context, state) {
+            if (state is WeatherForecastSuccess && !state.hasConnectivity) {
+              ScaffoldMessenger.of(context).showMaterialBanner(
+                MaterialBanner(
+                  overflowAlignment: OverflowBarAlignment.end,
+                  backgroundColor: Color(0xFF011D34),
+                  dividerColor: Color(0xFF011D34),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  leading: Icon(
+                    Icons.signal_wifi_statusbar_connected_no_internet_4,
+                    color: Colors.white,
+                  ),
+                  content: Column(
+                    children: [
+                      Text(
+                        'Sua conexão com a internet foi perdida.'
+                        ' A previsão pode estar desatualizada.',
+                        softWrap: true,
+                      ),
+                    ],
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () => ScaffoldMessenger.of(context)
+                          .hideCurrentMaterialBanner(),
+                      child: Text('Fechar'),
+                    ),
+                  ],
+                ),
+              );
+            }
+          },
           builder: (context, state) {
             return switch (state) {
               WeatherForecastSuccess() => CustomScrollView(
