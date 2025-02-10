@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:sembast_cache/src/core/enviroments/enviroments_enum.dart';
 
@@ -49,8 +50,12 @@ class VerticalWeatherCardWidget extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8),
-            child: Image.network(
-                "${EnvironmentEnum.constants.moonPhaseUrl}$imageUrl.png"),
+            child: CachedNetworkImage(
+              imageUrl:
+                  "${EnvironmentEnum.constants.moonPhaseUrl}$imageUrl.png",
+              placeholder: (context, url) => const CircularProgressIndicator(),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
+            ),
           ),
           Text(
             '$max/$min°',

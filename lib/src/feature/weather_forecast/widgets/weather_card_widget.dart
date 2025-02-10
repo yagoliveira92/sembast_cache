@@ -1,3 +1,4 @@
+import 'package:cached_network_svg_image/cached_network_svg_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sembast_cache/src/core/enviroments/enviroments_enum.dart';
@@ -36,7 +37,7 @@ class WeatherCardWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              SvgPicture.network(
+              CachedNetworkSVGImage(
                 "${EnvironmentEnum.constants.imageUrl}$conditionSlug.svg",
                 width: 32,
               ),
