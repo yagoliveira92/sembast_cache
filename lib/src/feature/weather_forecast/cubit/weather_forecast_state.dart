@@ -8,9 +8,13 @@ class WeatherForecastInitial extends WeatherForecastState {}
 class WeatherForecastLoading extends WeatherForecastState {}
 
 class WeatherForecastSuccess extends WeatherForecastState {
-  WeatherForecastSuccess(this.weatherData);
+  WeatherForecastSuccess(
+    this.weatherData,
+    this.hasConnectivity,
+  );
 
   final List<WeatherModel> weatherData;
+  final bool hasConnectivity;
 }
 
 class WeatherForecastError extends WeatherForecastState {
