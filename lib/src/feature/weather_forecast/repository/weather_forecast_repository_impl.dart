@@ -21,7 +21,7 @@ class WeatherRepositoryImpl implements WeatherRepository {
         bool hasConnectivity,
         List<WeatherModel> weatherList,
       })> getWeatherData() async {
-    List<String> cities = ['Sorriso', 'Barreiras', 'Rio Verde', 'Maracaju'];
+    List<String> cities = ['sorriso', 'barreiras', 'rio_verde', 'maracaju'];
     List<WeatherModel> weatherData = [];
     final hasConnection = await _connectivityService.hasInternetConnection();
     await Future.forEach(cities, (city) async {
@@ -35,9 +35,11 @@ class WeatherRepositoryImpl implements WeatherRepository {
           );
         } else {
           final data = await _localStorageService.fetchData(city);
-          weatherData.add(
-            WeatherModel.fromJson(data),
-          );
+          if (data.isNotEmpty) {
+            weatherData.add(
+              WeatherModel.fromJson(data),
+            );
+          }
         }
       } catch (e) {
         throw Exception('Não tem dados');
