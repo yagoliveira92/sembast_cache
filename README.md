@@ -1,5 +1,6 @@
 
-![Descricao da sua imagem](https://raw.githubusercontent.com/andreocunha/upload_files_test/main/exemplo-thumb.png)
+![Mobile- Flutter otimizando o cache com Sembast](https://github.com/user-attachments/assets/058fdf89-bdb7-4d5d-8596-084a33d6f2f0)
+
 
 ![](https://img.shields.io/github/license/alura-cursos/android-com-kotlin-personalizando-ui)
 
@@ -32,8 +33,6 @@ As técnicas e tecnologias utilizadas para desenvolver o projeto são:
 ## 🎯 Desafio
 
 Tela de detalhes do produto
-
-![orgs-desafio-detalhes](https://user-images.githubusercontent.com/8989346/124600562-3a743e00-de3d-11eb-9d45-15e8a8d2976f.gif)
 
 [Você pode conferir o resultado do desafio neste commit](https://github.com/yagoliveira92/sembast_cache/commit/b406b53a71ef32d506188204f8004b4982fe4483).
 
