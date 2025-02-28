@@ -32,8 +32,6 @@ As técnicas e tecnologias utilizadas para desenvolver o projeto são:
 
 ## 🎯 Desafio
 
-Tela de detalhes do produto
-
 [Você pode conferir o resultado do desafio neste commit](https://github.com/yagoliveira92/sembast_cache/commit/b406b53a71ef32d506188204f8004b4982fe4483).
 
 ## 📁 Acesso ao projeto
